@@ -1,0 +1,6 @@
+library_manager.add_book_action:
+  route_name: library_manager.add_book_form
+  title: 'Add Book'
+  description: 'Add a new book to the library.'
+  appears_on:
+    - entity.node.collection

@@ -1,0 +1,13 @@
+library_manager.library_page:
+  title: 'Library Home'
+  description: 'Go to the Library homepage.'
+  parent: system.admin_content
+  route_name: library_manager.library_page
+  weight: 0
+
+library_manager.add_book_form:
+  title: 'Add a New Book'
+  description: 'Add a book to the library.'
+  parent: system.admin_content
+  route_name: library_manager.admin_add_book
+  weight: 1

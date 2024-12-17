@@ -1,0 +1,9 @@
+services:
+  library_manager.library_service:
+    class: '\Drupal\library_manager\Service\LibraryService'
+    arguments: ['@entity_type.manager']
+
+  library_manager.route_subscriber:
+    class: '\Drupal\library_manager\Routing\RouteSubscriber'
+    tags:
+      - { name: event_subscriber }

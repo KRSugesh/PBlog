@@ -1,0 +1,53 @@
+# Route 1: Display the library homepage
+library_manager.library_page:
+  path: '/library'
+  defaults:
+    _controller: '\Drupal\library_manager\Controller\LibraryController::libraryPage'
+    _title: 'Library'
+  requirements:
+    _permission: 'access content'
+
+# Route 2: Display book details dynamically
+library_manager.book_details:
+  path: '/library/book/{id}'
+  defaults:
+    _controller: '\Drupal\library_manager\Controller\BookController::bookDetails'
+    _title: 'Book Details'
+  requirements:
+    _permission: 'access content'
+    id: '\d+'
+
+# Route 3: Admin form to add/edit books
+library_manager.admin_add_book:
+  path: '/admin/library/add'
+  defaults:
+    _controller: '\Drupal\library_manager\Controller\LibraryController::addBookForm'
+    _title: 'Add Book'
+  requirements:
+    _permission: 'administer site configuration'
+
+# Route 4: Display the total number of books using a service
+library_manager.book_count:
+  path: '/library/book-count'
+  defaults:
+    _controller: 'library_manager.library_service:displayBookCount'
+    _title: 'Book Count'
+  requirements:
+    _permission: 'access content'
+
+library_manager.book_json:
+  path: '/library/book-json'
+  defaults:
+    _controller: '\Drupal\library_manager\Controller\BookController::bookJson'
+    _format: 'json'
+  requirements:
+    _permission: 'access content'
+
+library_manager.add_book_form:
+  path: '/library/add-book-form'
+  defaults:
+    _form: '\Drupal\library_manager\Form\AddBookForm'
+    _title: 'Add Book Form'
+  requirements:
+    _permission: 'administer site configuration'
+

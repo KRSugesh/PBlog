@@ -1,0 +1,11 @@
+library_manager.library_page_tab:
+  route_name: library_manager.library_page
+  title: 'Overview'
+  base_route: library_manager.library_page
+  weight: 0
+
+library_manager.book_count_tab:
+  route_name: library_manager.book_count
+  title: 'Book Count'
+  base_route: library_manager.library_page
+  weight: 1
